@@ -38,7 +38,7 @@
                 <ul id="appointment-list" class="list-group">
                     <!-- GLI ELEMENTI DELLA LISTA VERRANNO CREATI QUI PROGRAMMATICAMENTE -->
 
-                    <!-- questo spinner verrà rimpiazzato da un nuovo innerHTML -->
+                    <!-- questo loader verrà nascosto dal blocco finally quando arrivano gli elementi dinamici o nel caso di un errore -->
                     <div class="spinner-grow text-info" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
@@ -109,6 +109,7 @@
             } catch (err) {
                 alert("QUI SIAMO NEL CATCH " + err.message)
             } finally {
+                // settiamo la classe del loader a d-none e quindi si nasconderà
                 document.querySelector(".spinner-grow").classList.add("d-none")
             }
 
