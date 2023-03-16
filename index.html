@@ -38,6 +38,10 @@
                 <ul id="appointment-list" class="list-group">
                     <!-- GLI ELEMENTI DELLA LISTA VERRANNO CREATI QUI PROGRAMMATICAMENTE -->
 
+                    <!-- questo spinner verrà rimpiazzato da un nuovo innerHTML -->
+                    <div class="spinner-grow text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -104,6 +108,8 @@
                 // questo catch fa da gestore di errori singolo, per errori differenti che possono scaturire all'interno del contesto del try
             } catch (err) {
                 alert("QUI SIAMO NEL CATCH " + err.message)
+            } finally {
+                document.querySelector(".spinner-grow").classList.add("d-none")
             }
 
             console.log("post")
